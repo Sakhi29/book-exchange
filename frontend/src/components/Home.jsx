@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BookIcon, PlusIcon, SearchIcon, ShuffleIcon } from "lucide-react";
+import Header from "./Header";
 
 function Home() {
   return (
     <>
       <div className="flex flex-col min-h-[100dvh]">
-        <header className="text-primary-foreground px-4 lg:px-6 h-16 flex items-center justify-between">
+        {/* <header className="text-primary-foreground px-4 lg:px-6 h-16 flex items-center justify-between">
           <Link href="#" className="flex items-center gap-2 font-bold">
             <BookIcon className="h-6 w-6" />
             Book Exchange
@@ -25,8 +26,9 @@ function Home() {
               Log in
             </Link>
           </nav>
-        </header>
-        <main className="flex-1">
+        </header> */}
+        <Header />
+        <main className="flex flex-col justify-center items-center">
           <section className="w-full py-12 md:py-24 lg:py-32 bg-hero-image bg-fixed bg-cover bg-bottom">
             <div className="container px-4 md:px-6 text-center text-primary-foreground">
               <h1 className="text-orange-700 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
@@ -49,6 +51,59 @@ function Home() {
                 >
                   List a Book
                 </Link>
+              </div>
+            </div>
+          </section>
+          <section className="bg-white py-16 w-[1200px]">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-wrap items-center">
+                <div
+                  className="w-full lg:w-1/2 mb-12 lg:mb-0 wow fadeInUp"
+                  data-wow-delay="0.1s"
+                >
+                  <div className="flex flex-wrap">
+                    <div className="w-1/2 p-2">
+                      <div className="relative">
+                        <img
+                          className="mb-6 rounded-lg"
+                          src="images/about/about1.jpg"
+                          alt="About 1"
+                        />
+                      </div>
+                    </div>
+                    <div className="w-1/2 p-2">
+                      <div className="relative mb-4">
+                        <img
+                          className="mb-4 rounded-lg"
+                          src="images/about/about2.jpg"
+                          alt="About 2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="w-full lg:w-1/2 mb-12 lg:mb-0 wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+                  <div className="px-4 lg:px-8">
+                    <div className="mb-8">
+                      <h2 className="text-5xl font-semibold mb-4 text-blue-950">
+                        Discover and Exchange Books
+                      </h2>
+                      <p className="text-gray-600">
+                        Join our community of book lovers and exchange your
+                        favorite reads with others.
+                      </p>
+                    </div>
+                    <a
+                      href="contact-us.html"
+                      className="bg-orange-400 text-white py-2 px-4 rounded-lg shadow hover:bg-orange-500"
+                    >
+                      Discover Books
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -88,10 +143,10 @@ function Home() {
               </div>
             </div>
           </section> */}
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="container px-4 md:px-6">
               <div className="grid md:grid-cols-2 gap-8">
-                {/* <!-- Card 1 --> */}
+                
                 <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 flex flex-col items-center">
                   <h2 className="text-3xl font-bold tracking-tighter text-center mb-4">
                     Discover New Books
@@ -108,7 +163,7 @@ function Home() {
                   </Link>
                 </div>
 
-                {/* <!-- Card 2 --> */}
+                
                 <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 flex flex-col items-center">
                   <h2 className="text-3xl font-bold tracking-tighter text-center mb-4">
                     List Your Books
@@ -126,63 +181,117 @@ function Home() {
                 </div>
               </div>
             </div>
-          </section>
-
-          <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tighter">
-                  How it Works
+          </section> */}
+          <section className="bg-gray-100 py-16 w-[1200px]">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-5xl font-semibold mb-4 text-blue-950">
+                  Our Mission
                 </h2>
-                <p className="max-w-[700px] mx-auto mt-4 text-muted-foreground">
-                  Our simple and intuitive process makes it easy to discover,
-                  list, and exchange books with other members.
+                <p className="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris
                 </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-8 mt-8">
-                <div className="text-center">
-                  <SearchIcon className="h-12 w-12 mx-auto text-primary" />
-                  <h3 className="text-xl font-bold mt-4">Discover Books</h3>
-                  <p className="mt-2 text-muted-foreground">
-                    Browse our extensive collection of books and find your next
-                    great read.
-                  </p>
+              <div className="flex flex-wrap -mx-4">
+                <div
+                  className="w-full lg:w-1/3 md:w-1/2 px-4 mb-8 wow fadeInUp border-2 border-transparent hover:border-orange-400 rounded-lg transition duration-300 ease-in-out"
+                  data-wow-delay="0.2s"
+                >
+                  <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div className="text-4xl mb-4">
+                      {/* <i className="flaticon-open-book-1"></i> */}
+                      <SearchIcon className="h-12 w-12 mx-auto text-blue-950 hover:text-orange-400" />
+                    </div>
+                    <div className="icon-content">
+                      <h4 className="text-xl font-semibold mb-2 text-blue-950">
+                        Discover Books
+                      </h4>
+                      <p className="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      {/* <a
+                        href="about-us.html"
+                        className="text-blue-500 hover:underline flex items-center justify-center"
+                      >
+                        Learn More <FaAngleRight className="ml-2" />
+                      </a> */}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <PlusIcon className="h-12 w-12 mx-auto text-primary" />
-                  <h3 className="text-xl font-bold mt-4">List Your Books</h3>
-                  <p className="mt-2 text-muted-foreground">
-                    Share your books with the community and find new homes for
-                    them.
-                  </p>
+                <div className="w-full lg:w-1/3 md:w-1/2 px-4 mb-8 wow fadeInUp border-2 border-transparent hover:border-orange-400 rounded-lg transition duration-300 ease-in-out">
+                  <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div className="text-4xl mb-4">
+                      <PlusIcon className="h-12 w-12 mx-auto text-blue-950 hover:text-orange-400" />
+                      {/* <i className="flaticon-exclusive"></i> */}
+                    </div>
+                    <div className="icon-content">
+                      <h4 className="text-xl font-semibold mb-2 text-blue-950">
+                        List Your Books
+                      </h4>
+                      <p className="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      {/* <a
+                        href="about-us.html"
+                        className="text-blue-500 hover:underline flex items-center justify-center"
+                      >
+                        Learn More <FaAngleRight className="ml-2" />
+                      </a> */}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <ShuffleIcon className="h-12 w-12 mx-auto text-primary" />
-                  <h3 className="text-xl font-bold mt-4">Exchange Books</h3>
-                  <p className="mt-2 text-muted-foreground">
-                    Connect with other book lovers and exchange your favorite
-                    reads.
-                  </p>
+                <div className="w-full lg:w-1/3 md:w-1/2 px-4 mb-8 wow fadeInUp border-2 border-transparent hover:border-orange-400 rounded-lg transition duration-300 ease-in-out">
+                  <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div className="text-4xl mb-4">
+                      <ShuffleIcon className="h-12 w-12 mx-auto text-blue-950 hover:text-orange-400" />
+                      {/* <i className="flaticon-store"></i> */}
+                    </div>
+                    <div className="icon-content">
+                      <h4 className="text-xl font-semibold mb-2 text-blue-950">
+                        Exchange Books
+                      </h4>
+                      <p className="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      {/* <a
+                        href="about-us.html"
+                        className="text-blue-500 hover:underline flex items-center justify-center"
+                      >
+                        Learn More <FaAngleRight className="ml-2" />
+                      </a> */}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
         </main>
-        <footer className="bg-muted text-muted-foreground px-4 md:px-6 py-6">
-          <div className="container flex items-center justify-between">
-            <p className="text-sm">
-              &copy; 2024 Book Exchange. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <Link href="#" className="text-sm hover:underline">
-                About
-              </Link>
-              <Link href="#" className="text-sm hover:underline">
-                Contact
-              </Link>
+        <div className="bg-blue-950 text-white py-6">
+          <div className="container mx-auto px-4 w-[1080px]">
+            <div className="flex flex-wrap items-center justify-between">
+              <div className="w-full lg:w-1/2 text-left mb-4 lg:mb-0">
+                <p className="text-sm">
+                  Book Exchange Platform - © 2024 All Rights Reserved
+                </p>
+              </div>
+              <div className="w-full lg:w-1/2 text-right">
+                <p className="text-sm">
+                  Made with <span className="text-red-500">♥</span> by Sakhi
+                  Rotliwala
+                </p>
+              </div>
             </div>
           </div>
-        </footer>
+        </div>
       </div>
 
       {/* <div className="flex flex-col items-center justify-center h-screen bg-gray-100">

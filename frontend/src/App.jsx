@@ -9,8 +9,11 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
-import BookForm from "./components/BookForm";
+import BookForm from "./components/AddBooks";
 import BookList from "./components/BookList";
+import BookDiscovery from "./components/BookDiscovery";
+import YourBooksPage from "./components/YourBooks";
+import AddBooks from "./components/AddBooks";
 
 function App() {
   const isAuthenticated = !!localStorage.getItem("token");
@@ -22,16 +25,22 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route
-            path="/dashboard"
+            path="/add-book"
             element={
               <PrivateRoute>
-                <Dashboard />
+                <AddBooks />
               </PrivateRoute>
             }
-          >
-            <Route path="form" element={<BookForm />} />
-            <Route path="list" element={<BookList />} />
-          </Route>
+          />
+          <Route
+            path="/your-books"
+            element={
+              <PrivateRoute>
+                <YourBooksPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/discover" element={<BookDiscovery />} />
         </Routes>
       </div>
     </Router>

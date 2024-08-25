@@ -5,6 +5,7 @@ const {
   getBooks,
   deleteBook,
   updateBook,
+  getAllBooks,
 } = require("../controllers/bookController");
 const authMiddleware = require("../middleware/authMiddleware");
 const { upload } = require("../config/cloudinaryConfig");
@@ -13,11 +14,13 @@ const { upload } = require("../config/cloudinaryConfig");
 router.post("/", authMiddleware, upload.single("image"), addBook);
 
 // Route to get all books for the authenticated user
-router.get("/", authMiddleware, getBooks);
+router.get("/user", authMiddleware, getBooks);
 
 // Route to delete a book
 router.delete("/:id", authMiddleware, deleteBook);
 
 router.put("/:id", authMiddleware, upload.single("image"), updateBook);
+
+router.get("/", getAllBooks);
 
 module.exports = router;

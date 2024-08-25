@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BookForm from "./BookForm";
+import BookForm from "./AddBooks";
 import BookList from "./BookList";
 import axios from "axios";
 import Sidebar from "./SideBar";
@@ -13,7 +13,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
       console.log("Fetching books with token:", token);
-      const res = await axios.get("http://localhost:5000/api/books", {
+      const res = await axios.get("http://localhost:5000/api/books/user", {
         headers: { "x-auth-token": token },
       });
       console.log("Books fetched:", res.data);

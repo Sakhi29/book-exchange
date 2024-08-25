@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 const bookRoutes = require("./routes/book");
+const matchRoutes = require("./routes/exchangeRequest");
 const cors = require("cors");
 
 dotenv.config();
@@ -19,6 +20,7 @@ mongoose
 
 app.use("/api/auth", authRoutes);
 app.use("/api/books", bookRoutes); // Use the book routes
+app.use("/api", matchRoutes); // Matchmaking and exchange routes
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

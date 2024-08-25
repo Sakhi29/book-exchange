@@ -95,9 +95,30 @@ const updateBook = async (req, res) => {
   }
 };
 
+const getAllBooks = async (req, res) => {
+  try {
+    const { genre, author } = req.query;
+
+    let query = {};
+    if (genre) {
+      query.genre = genre;
+    }
+    if (author) {
+      query.author = author;
+    }
+
+    const books = await Book.find(query);
+    res.json(books);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+};
+
 module.exports = {
   addBook,
   getBooks,
   deleteBook,
   updateBook,
+  getAllBooks,
 };

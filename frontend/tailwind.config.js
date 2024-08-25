@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         "hero-image": "url(/hero-section2.jpg)",
       },
+      clipPath: {
+        polygon: "polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%)",
+      },
     },
   },
   plugins: [],
