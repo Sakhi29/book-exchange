@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
   title: {
@@ -28,4 +28,6 @@ const BookSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Book', BookSchema);
+const Book = mongoose.model("Book", BookSchema);
+
+module.exports = Book;

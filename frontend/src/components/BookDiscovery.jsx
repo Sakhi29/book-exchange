@@ -34,11 +34,9 @@ function BookDiscovery() {
   return (
     <>
       <Header />
-      <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold mb-6">Discover Books</h1>
-
+      <div className="container mx-auto p-8 max-w-7xl">
         {/* Filter Section */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-gray-700">Genre:</label>
@@ -63,24 +61,117 @@ function BookDiscovery() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Books Display Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {books.map((book) => (
-            <div key={book._id} className="bg-white shadow-lg rounded-lg p-4">
-              {book.imageUrl && (
-                <img
-                  src={book.imageUrl}
-                  alt={book.title}
-                  className="mb-3 w-full h-48 object-cover rounded-lg"
-                />
-              )}
-              <h3 className="text-xl font-semibold">{book.title}</h3>
-              <p>Author: {book.author}</p>
-              <p>Genre: {book.genre}</p>
+        <div className="container mx-auto p-4">
+          <div className="flex">
+            {/* Filter Options */}
+            <div className="w-1/4 pr-4">
+              <h2 className="text-3xl font-bold mb-4 text-indigo-900">
+                Filter Option
+              </h2>
+
+              <div className="mb-4">
+                {/* <button className="w-full p-2 bg-white border border-gray-300 rounded flex justify-between items-center">
+                  <span>Author</span>
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button> */}
+                <div>
+                  <label className="block text-blue-900 font-bold">
+                    Genre:
+                  </label>
+                  <input
+                    type="text"
+                    name="genre"
+                    value={filters.genre}
+                    onChange={handleFilterChange}
+                    className="w-full p-2 border border-gray-300 rounded"
+                    placeholder="Enter genre"
+                  />
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <div>
+                  <label className="block text-blue-900 font-bold">
+                    Author:
+                  </label>
+                  <input
+                    type="text"
+                    name="author"
+                    value={filters.author}
+                    onChange={handleFilterChange}
+                    className="w-full p-2 border border-gray-300 rounded"
+                    placeholder="Enter author"
+                  />
+                </div>
+              </div>
             </div>
-          ))}
+            <div className="w-3/4">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-3xl font-bold text-indigo-900">
+                  Explore Books
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 mt-5">
+                {books.map((book, index) => (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-lg overflow-hidden"
+                  >
+                    <div className="relative">
+                      {book.imageUrl && (
+                        <img
+                          src={book.imageUrl}
+                          alt={book.title}
+                          className="w-full h-64 object-contain hover:text-orange-500"
+                        />
+                      )}
+                      <button className="absolute top-2 right-2 bg-white rounded-full p-1">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-bold text-lg text-center text-blue-950 hover:text-orange-500">
+                        {book.title}
+                      </h3>
+                      <p className="text-sm text-blue-950 text-center">
+                        {book.author}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

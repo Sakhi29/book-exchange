@@ -1,31 +1,66 @@
-// models/ExchangeRequest.js
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 
-const ExchangeRequestSchema = new mongoose.Schema({
+// const ExchangeRequestSchema = new Schema({
+//   requester: {
+//     type: Schema.Types.ObjectId,
+//     ref: "User",
+//     required: true,
+//   },
+//   requestedBook: {
+//     type: Schema.Types.ObjectId,
+//     ref: "Book",
+//     required: true,
+//   },
+//   offeredBook: {
+//     type: Schema.Types.ObjectId,
+//     ref: "Book",
+//     required: true,
+//   },
+//   status: {
+//     type: String,
+//     enum: ["pending", "accepted", "rejected"],
+//     default: "pending",
+//   },
+//   createdAt: {
+//     type: Date,
+//     default: Date.now,
+//   },
+// });
+
+// const ExchangeRequest = mongoose.model(
+//   "ExchangeRequest",
+//   ExchangeRequestSchema
+// );
+// module.exports = ExchangeRequest;
+
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const ExchangeRequestSchema = new Schema({
   requester: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
-  requestee: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  requesterBook: {
-    type: mongoose.Schema.Types.ObjectId,
+  requestedBook: {
+    type: Schema.Types.ObjectId,
     ref: "Book",
     required: true,
   },
-  requesteeBook: {
-    type: mongoose.Schema.Types.ObjectId,
+  offeredBook: {
+    type: Schema.Types.ObjectId,
     ref: "Book",
     required: true,
   },
   status: {
     type: String,
-    enum: ["pending", "accepted", "declined"],
+    enum: ["pending", "accepted", "rejected"],
     default: "pending",
+  },
+  recipientNotified: {
+    type: Boolean,
+    default: false,
   },
   createdAt: {
     type: Date,
@@ -33,4 +68,8 @@ const ExchangeRequestSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("ExchangeRequest", ExchangeRequestSchema);
+const ExchangeRequest = mongoose.model(
+  "ExchangeRequest",
+  ExchangeRequestSchema
+);
+module.exports = ExchangeRequest;
