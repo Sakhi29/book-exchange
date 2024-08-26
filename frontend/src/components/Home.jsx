@@ -29,9 +29,9 @@ function Home() {
         </header> */}
         <Header />
         <main className="flex flex-col justify-center items-center">
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-hero-image bg-fixed bg-cover bg-bottom">
+          {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-hero-image bg-fixed bg-cover bg-bottom">
             <div className="container px-4 md:px-6 text-center text-primary-foreground">
-              <h1 className="text-orange-700 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              <h1 className="text-orange-500 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 Discover and Exchange Books
               </h1>
               <p className="text-white max-w-[700px] mx-auto text-lg md:text-xl mt-4">
@@ -41,15 +41,34 @@ function Home() {
               <div className="mt-8 flex justify-center gap-4">
                 <Link
                   to="/login"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-orange-700 px-8 text-sm text-white font-medium text-primary shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-orange-400 hover:bg-orange-500 px-8 text-sm text-white font-medium text-primary shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 >
                   Get Started
                 </Link>
+              </div>
+            </div>
+          </section> */}
+          <section
+            className="w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-fixed relative"
+            style={{
+              backgroundImage: "url('/hero-section.jpg')",
+            }}
+          >
+            <div className="absolute inset-0 bg-blue-950 opacity-80 clip-path-polygon"></div>
+            <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
+              <h1 className="text-orange-500 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                Discover and Exchange Books
+              </h1>
+              <p className="text-white max-w-[700px] mx-auto text-lg md:text-xl mt-4">
+                Join our community of book lovers and exchange your favorite
+                reads with others.
+              </p>
+              <div className="mt-8 flex justify-center gap-4">
                 <Link
                   to="/login"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-400 bg-primary px-8 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-orange-700 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-orange-400 hover:bg-orange-500 px-8 text-sm text-white font-medium text-primary shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 >
-                  List a Book
+                  Get Started
                 </Link>
               </div>
             </div>
@@ -97,7 +116,7 @@ function Home() {
                       </p>
                     </div>
                     <a
-                      href="contact-us.html"
+                      href="/discover"
                       className="bg-orange-400 text-white py-2 px-4 rounded-lg shadow hover:bg-orange-500"
                     >
                       Discover Books

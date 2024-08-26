@@ -15,7 +15,7 @@ function BookDiscovery() {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/books", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/books`, {
         params: filters, // Pass the filters as query parameters
       });
       setBooks(res.data);
@@ -35,34 +35,6 @@ function BookDiscovery() {
     <>
       <Header />
       <div className="container mx-auto p-8 max-w-7xl">
-        {/* Filter Section */}
-        {/* <div className="mb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-gray-700">Genre:</label>
-              <input
-                type="text"
-                name="genre"
-                value={filters.genre}
-                onChange={handleFilterChange}
-                className="w-full p-2 border border-gray-300 rounded"
-                placeholder="Enter genre"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700">Author:</label>
-              <input
-                type="text"
-                name="author"
-                value={filters.author}
-                onChange={handleFilterChange}
-                className="w-full p-2 border border-gray-300 rounded"
-                placeholder="Enter author"
-              />
-            </div>
-          </div>
-        </div> */}
-
         {/* Books Display Section */}
         <div className="container mx-auto p-4">
           <div className="flex">
@@ -73,23 +45,6 @@ function BookDiscovery() {
               </h2>
 
               <div className="mb-4">
-                {/* <button className="w-full p-2 bg-white border border-gray-300 rounded flex justify-between items-center">
-                  <span>Author</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button> */}
                 <div>
                   <label className="block text-blue-900 font-bold">
                     Genre:

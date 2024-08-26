@@ -34,7 +34,14 @@ function App() {
             }
           />
           <Route path="/discover" element={<BookDiscovery />} />
-          <Route path="/match" element={<Match />} />
+          <Route
+            path="/match"
+            element={
+              <PrivateRoute>
+                <Match />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </div>
     </Router>

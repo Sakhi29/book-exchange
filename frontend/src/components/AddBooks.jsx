@@ -18,9 +18,12 @@ function AddBooks() {
     try {
       const token = localStorage.getItem("token");
       console.log("Fetching books with token:", token);
-      const res = await axios.get("http://localhost:5000/api/books/user", {
-        headers: { "x-auth-token": token },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/books/user`,
+        {
+          headers: { "x-auth-token": token },
+        }
+      );
       console.log("Books fetched:", res.data);
     } catch (err) {
       console.error(
@@ -49,12 +52,16 @@ function AddBooks() {
     formDataObj.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/books", formDataObj, {
-        headers: {
-          "x-auth-token": token,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/books`,
+        formDataObj,
+        {
+          headers: {
+            "x-auth-token": token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       fetchBooks(); // Fetch the updated list of books after adding a new one
       toast.success("Book added successfully!"); // Display success toast
     } catch (err) {
@@ -73,9 +80,9 @@ function AddBooks() {
       <ToastContainer />
       <div
         className="relative w-full h-[450px] bg-cover bg-center md:h-[300px] sm:h-[230px]"
-        style={{ backgroundImage: "url('images/background/bg2.jpg')" }}
+        style={{ backgroundImage: "url('/hero-section.jpg')" }}
       >
-        <div className="absolute inset-0 bg-blue-950 opacity-90 clip-path-polygon"></div>
+        <div className="absolute inset-0 bg-blue-950 opacity-80 clip-path-polygon"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           <h1 className="text-white text-[3.5rem] font-bold md:text-[40px] sm:text-[30px]">
             Add Your Books

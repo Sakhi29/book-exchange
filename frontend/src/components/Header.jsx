@@ -1,9 +1,4 @@
-import {
-  ArrowDownNarrowWide,
-  BookIcon,
-  ChevronDown,
-  ChevronDownCircle,
-} from "lucide-react";
+import { BookIcon, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -55,8 +50,11 @@ const Header = () => {
   return (
     <div>
       <header className="text-primary-foreground px-4 lg:px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-bold">
-          <BookIcon className="h-6 w-6" />
+        <Link
+          to="/"
+          className="flex items-center gap-2 font-bold text-blue-950"
+        >
+          <BookIcon className="h-6 w-6 text-blue-950" />
           Book Exchange
         </Link>
         <nav className="flex items-center gap-4 sm:gap-6">
@@ -90,7 +88,7 @@ const Header = () => {
                 <ChevronDown />
               </button>
               {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
                   <div
                     className="block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
                     onClick={() => {
